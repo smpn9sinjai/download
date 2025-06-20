@@ -1,0 +1,186 @@
+<html>
+<head>
+<meta charset='UTF-8'/>
+<meta content='orange' name='theme-color'/>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+<meta content='ie=edge' http-equiv='X-UA-Compatible'/>
+<title>SMPN 9 SINJAI</title>
+ 
+<script type='text/javascript'>
+ if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+    const newPath = window.location.pathname.slice(0, -1);
+    const newUrl = window.location.origin + newPath + window.location.search + window.location.hash;
+    window.history.replaceState(null, '', newUrl);
+  }
+</script>
+<style>
+  body, html {
+    margin:0 ;
+    padding: 0;
+    height: 100%;
+    
+    font-family:Arial;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Jika iframe tidak memerlukan border */
+    display:none;
+  }
+ .container {
+  height: 100vh;
+  width: 100vw;
+  font-family: Helvetica;
+}
+
+.loader {
+  height: 20px;
+  width: 250px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.loader--dot {
+  animation-name: loader;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background-color: black;
+  position: absolute;
+  border: 2px solid white;
+}
+
+.loader--dot:first-child {
+  background-color: #8cc759;
+  animation-delay: 0.5s;
+}
+
+.loader--dot:nth-child(2) {
+  background-color: #8c6daf;
+  animation-delay: 0.4s;
+}
+.loader--dot:nth-child(3) {
+  background-color: #ef5d74;
+  animation-delay: 0.3s;
+}
+.loader--dot:nth-child(4) {
+  background-color: #f9a74b;
+  animation-delay: 0.2s;
+}
+.loader--dot:nth-child(5) {
+  background-color: #60beeb;
+  animation-delay: 0.1s;
+}
+.loader--dot:nth-child(6) {
+  background-color: #fbef5a;
+  animation-delay: 0s;
+}
+.loader--text {
+  position: absolute;
+  top: 200%;
+  left: 0;
+  right: 0;
+  width: 8rem;
+  margin: auto;
+}
+.loader--img {
+  position: absolute;
+  top: 400%;
+  left: 0;
+  right: 0;
+  width: 8rem;
+  margin: auto;
+}
+.loader--text:after {
+  content: "Cek Browser";
+  font-weight: bold;
+  animation-name: loading-text;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes loader {
+  15% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(230px);
+  }
+  65% {
+    transform: translateX(230px);
+  }
+  95% {
+    transform: translateX(0);
+  }
+}
+@keyframes loading-text {
+  0% {
+    content: "Mohon Tunggu";
+   color: black;
+  }
+  25% {
+    content: "Mohon Tunggu.";
+     color: black;
+  }
+  50% {
+    content: "Mohon Tunggu..";
+   color: black;
+  }
+  75% {
+    content: "Mohon Tunggu...";
+   color: black;
+  }
+}
+#rest{margin:0;padding:0}
+b {font-size:30px}
+a{font-size:25px;text-decoration:none}
+a:hover{color:black}
+ img{width:10%;border-radius:100px} 
+ 
+   @media all and (min-width: 480px) and (max-width: 768px) { 
+  img{width:20%;border-radius:100px}
+   }
+</style> 
+
+
+</head><body>
+<div class='container' id='lop'><div class='loader'><div class='loader--dot'></div><div class='loader--dot'></div><div class='loader--dot'></div><div class='loader--dot'></div><div class='loader--dot'></div><div class='loader--dot'></div><div class='loader--text'></div></div></div>
+<div class='container' id='lod'> 
+<div style="margin:0;" id='tes'>
+<center>
+ <img src="/doku/smp.jpg"></img>
+<div style="font-size:30px;background:green;color:white;width:330px;border-radius:10px;margin-top:10px;padding:10px;border-top:5px solid orange">UPTD SMPN 9 SINJAI</div><br>
+<b>Mapel Remedi</b><br><i>SAS GENAP TP.2024/2025</i><p>
+<div style="background:Orange;color:white;width:330px;border-radius:10px;margin-top:10px"><b style="font-color:blue" >Kelas 7</b><p></div>
+<a href="https://drive.google.com/file/d/19HMS7SfghA7puJbB2il_9bz-46r7ZmnH/view?usp=drive_link" onclick="go(event,this.href)">Donwload Ijazah dan Transkrip Nilai 2025</a><br>
+  
+
+ 
+</center>
+</div>
+<script>
+document.body.style.marginTop="50px";
+document.getElementById("lop").style.display="none"
+var hh='';
+function go(ev,dd){
+ev.preventDefault();
+var mdata=	`<iframe allowfullscreen='true' id="soal" frameborder='0' onload='gos()' height='980px' id='soal' marginheight='0' marginwidth='0' mozallowfullscreen='true' msallowfullscreen='true'  src='`+dd+`' style='border: none; width:100%;max-width:100%; max-height:100vh' webkitallowfullscreen='true' width='640px'>Memuat&#8230;</iframe>`
+document.body.style.marginTop="0px";
+document.getElementById("tes").innerHTML=mdata
+document.getElementById("lop").style.display="block"
+}
+function gos(){
+document.getElementById("lop").style.display="none"
+ document.getElementById("soal").style.display="block"
+ document.getElementById("lop").innerHTML="";
+}
+</script>
+
+
+</body></html>
